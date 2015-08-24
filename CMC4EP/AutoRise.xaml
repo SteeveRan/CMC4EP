@@ -1,0 +1,192 @@
+﻿<Window x:Class="CMC4EP.AutoRise"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ccl="clr-namespace:Ctrl;assembly=Ctrl"
+        Title="" Height="500" Width="700" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="NoResize" WindowStartupLocation ="CenterScreen">
+
+    <Grid>
+        <!--Определение строк-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="333"/>
+            <RowDefinition Height="102"/>
+        </Grid.RowDefinitions>
+
+        <!--Ресурсы для фонов-->
+        <Grid.Resources>
+            <VisualBrush x:Key="Logo">
+                <VisualBrush.Visual>
+                    <Canvas Width="345.333" Height="100" Canvas.Left="0" Canvas.Top="0">
+                        <Path Width="55.4386" Height="83.9974" Canvas.Left="103.175" Canvas.Top="9.48641" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 131.254,69.1237L 140.254,9.48641L 158.614,9.48641L 158.614,93.4838L 146.134,93.4838L 146.134,33.2464L 137.014,93.4838L 124.534,93.4838L 114.695,34.0851L 114.695,93.4838L 103.175,93.4838L 103.175,9.48641L 121.534,9.48641L 131.254,69.1237 Z "/>
+                        <Path Width="39.3573" Height="85.9173" Canvas.Left="167.134" Canvas.Top="8.52686" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 206.491,62.1641L 206.491,73.3241C 206.491,86.7642 199.772,94.4442 186.812,94.4442C 173.852,94.4442 167.134,86.7642 167.134,73.3241L 167.134,29.6455C 167.134,16.2068 173.852,8.52686 186.812,8.52686C 199.772,8.52686 206.491,16.2068 206.491,29.6455L 206.491,37.8055L 194.012,37.8055L 194.012,28.8055C 194.012,22.8055 191.372,20.5255 187.174,20.5255C 182.972,20.5255 180.332,22.8055 180.332,28.8055L 180.332,74.1641C 180.332,80.1628 182.972,82.3241 187.174,82.3241C 191.372,82.3241 194.012,80.1628 194.012,74.1641L 194.012,62.1641L 206.491,62.1641 Z "/>
+                        <Path Width="44.6387" Height="83.9973" Canvas.Left="211.412" Canvas.Top="9.48633" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 236.85,66.2436L 236.85,34.6863L 223.532,66.2436M 211.412,66.2436L 235.41,9.48633L 249.81,9.48633L 249.81,66.2436L 256.05,66.2436L 256.05,78.2436L 249.81,78.2436L 249.81,93.4836L 236.85,93.4836L 236.85,78.2436L 211.412,78.2436L 211.412,66.2436 Z "/>
+                        <Path Width="35.9987" Height="83.996" Canvas.Left="262.051" Canvas.Top="9.48682" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 275.251,44.8842L 293.37,44.8842L 293.37,56.8842L 275.251,56.8842L 275.251,81.4828L 298.05,81.4828L 298.05,93.4828L 262.051,93.4828L 262.051,9.48682L 298.05,9.48682L 298.05,21.4855L 275.251,21.4855L 275.251,44.8842 Z "/>
+                        <Path Width="39.1187" Height="83.9973" Canvas.Left="306.21" Canvas.Top="9.48576" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 319.41,21.4858L 319.41,49.9257L 325.65,49.9257C 329.85,49.9257 332.129,48.0057 332.129,42.0057L 332.129,29.4045C 332.129,23.4045 329.85,21.4858 325.65,21.4858M 345.329,30.2458L 345.329,41.1658C 345.329,54.6058 338.85,61.9244 325.65,61.9244L 319.41,61.9244L 319.41,93.4831L 306.21,93.4831L 306.21,9.48576L 325.65,9.48576C 338.85,9.48576 345.329,16.8057 345.329,30.2458 Z "/>
+                        <Path Width="58.984" Height="35.855" Canvas.Left="2.12297" Canvas.Top="4.55745" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 7.21228,27.8164C 4.85496,31.8525 3.17228,36.0924 2.12297,40.4124C 3.86963,39.2591 5.92696,38.5191 8.16429,38.3471C 10.9803,38.1337 13.651,38.8524 15.875,40.2431C 16.575,38.2657 17.4683,36.3245 18.5656,34.4471C 26.087,21.5684 40.815,15.5271 54.651,18.4244C 54.3243,13.3897 56.9736,8.83512 61.107,6.50179C 40.8496,0.460449 18.347,8.75375 7.21228,27.8164 Z "/>
+                        <Path Width="21.8534" Height="68.36" Canvas.Left="72.807" Canvas.Top="17.5151" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 80.1029,17.5151C 80.1403,22.5111 77.2629,26.9391 72.9709,29.0431C 82.4243,39.6737 84.4616,55.5711 76.899,68.5177C 75.7056,70.5604 74.3296,72.4257 72.807,74.1138C 76.583,76.0804 79.2896,79.8938 79.6376,84.4511C 79.6736,84.9311 79.6816,85.4058 79.6643,85.8751C 82.9576,82.8164 85.8669,79.2324 88.2496,75.1497C 99.443,55.9884 95.5096,32.1737 80.1029,17.5151 Z "/>
+                        <Path Width="58.8507" Height="36.8712" Canvas.Left="1.90135" Canvas.Top="61.5427" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 54.2267,86.3907C 54.18,85.792 54.18,85.2 54.216,84.6187C 46.4307,86.1453 38.084,84.9654 30.696,80.6507C 23.2734,76.3147 18.1294,69.5787 15.648,62.0054C 14.0107,62.98 12.132,63.6027 10.104,63.7587C 7.07735,63.9907 4.21869,63.1414 1.90135,61.5427C 4.61735,73.896 12.284,85.12 24.0653,92.0027C 35.6094,98.7454 48.8467,100 60.752,96.5627C 57.136,94.552 54.5653,90.8254 54.2267,86.3907 Z "/>
+                        <Path Width="17.192" Height="17.1934" Canvas.Left="58.7976" Canvas.Top="8.91818" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 75.9643,16.8608C 76.3256,21.5942 72.7816,25.7249 68.0483,26.0862C 63.3149,26.4475 59.183,22.9035 58.823,18.1688C 58.4616,13.4355 62.0056,9.30485 66.7403,8.94352C 71.4736,8.58219 75.6029,12.1275 75.9643,16.8608 Z "/>
+                        <Path Width="17.1922" Height="17.1934" Canvas.Left="0.33717" Canvas.Top="42.5261" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 17.504,50.4688C 17.8654,55.2021 14.32,59.3315 9.58669,59.6942C 4.8547,60.0555 0.722697,56.5115 0.362691,51.7768C 2.03451e-005,47.0435 3.54535,42.9128 8.27869,42.5515C 13.012,42.1901 17.1427,45.7355 17.504,50.4688 Z "/>
+                        <Path Width="17.192" Height="17.1932" Canvas.Left="58.336" Canvas.Top="76.9832" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 75.5027,84.9259C 75.864,89.6592 72.32,93.7886 67.5867,94.1512C 62.8534,94.5112 58.7214,90.9672 58.3613,86.2325C 58,81.5006 61.544,77.3686 66.2787,77.0085C 71.012,76.6472 75.1414,80.1912 75.5027,84.9259 Z "/>
+                        <Path Width="44.245" Height="44.3093" Canvas.Left="25.5762" Canvas.Top="29.3284" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 60.2319,58.3842C 52.8812,58.9455 46.4666,53.4401 45.9066,46.0895C 45.3519,38.8455 50.6932,32.5148 57.8839,31.7961C 47.4826,26.4202 34.5786,30.0815 28.6039,40.3108C 22.4332,50.8748 25.9945,64.4401 36.5599,70.6108C 47.1226,76.7802 60.6906,73.2188 66.8599,62.6548C 68.6092,59.6588 69.5759,56.4202 69.8212,53.1788C 67.5932,56.0935 64.1799,58.0815 60.2319,58.3842 Z "/>
+                    </Canvas>
+                </VisualBrush.Visual>
+            </VisualBrush>
+            <VisualBrush x:Key="Back_1">
+                <VisualBrush.Visual>
+                    <Canvas Width="3780" Height="3780" Canvas.Left="0" Canvas.Top="0">
+                        <Viewbox Width="3779.53" Height="3779.53" Canvas.Left="0" Canvas.Top="0.466797">
+                            <Canvas Width="3779.53" Height="3779.53">
+                                <Canvas Width="3780" Height="3780" x:Name="Clip" Clip="F1 M 0,3779.53L 3779.53,3779.53L 3779.53,0L 0,0L 0,3779.53 Z ">
+                                    <Path Width="1041.43" Height="381.332" Canvas.Left="1344.62" Canvas.Top="1674.65" Stretch="Fill" Fill="#FF6C91CB" Data="F1 M 1344.62,1674.65L 2386.05,1674.65L 2386.05,2055.98L 1943.45,2055.98L 1910.42,2000.53L 1344.62,2000.77"/>
+                                </Canvas>
+                            </Canvas>
+                        </Viewbox>
+                    </Canvas>
+                </VisualBrush.Visual>
+            </VisualBrush>
+            <VisualBrush x:Key="Back_2">
+                <VisualBrush.Visual>
+                    <Canvas Width="3780" Height="3780" Canvas.Left="0" Canvas.Top="0">
+                        <Viewbox Width="3779.53" Height="3779.53" Canvas.Left="0" Canvas.Top="0.466797">
+                            <Canvas Width="3779.53" Height="3779.53">
+                                <Canvas Width="3780" Height="3780" Clip="F1 M 0,3779.53L 3779.53,3779.53L 3779.53,0L 0,0L 0,3779.53 Z ">
+                                    <Path Width="1041.43" Height="163.333" Canvas.Left="1369.05" Canvas.Top="1726.43" Stretch="Fill" Fill="#FF2D4165" Data="F1 M 2410.48,1781.77L 2410.48,1889.77L 1964.43,1889.77L 1902.1,1781.77L 1369.05,1781.77L 1369.05,1726.43L 1930.1,1726.43L 1962.99,1781.77L 2410.48,1781.77 Z "/>
+                                </Canvas>
+                            </Canvas>
+                        </Viewbox>
+                    </Canvas>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Grid.Resources>
+
+        <!--Фон с эффектом-->
+        <!--Пока нет((-->
+
+        <!--Шапка-->
+        <Grid Grid.Row="0">
+            <Border Background="#2e4165" Width="700" Height="60" VerticalAlignment="Top" MouseLeftButtonDown="Window_MouseLeftButtonDown"/>
+            <Border Background="{StaticResource Logo}" HorizontalAlignment="Left" Height="50" Margin="10,5,0,0" VerticalAlignment="Top" Width="173"/>
+            <ccl:Exit_button x:Name="close_b" HorizontalAlignment="Right" Margin="0,5,5,0" VerticalAlignment="Top"/>
+        </Grid>
+
+        <!--Основное окно + кнопки регестрации и авторизации + чекбоксы-->
+        <Grid Grid.Row="1">
+            <Border Background="{StaticResource Back_1}" Width="700" Height="256" VerticalAlignment="Top"/>
+            <Border Background="{StaticResource Back_2}" Width="700" Height="110" VerticalAlignment="Bottom"/>
+            <ccl:Auth_button HorizontalAlignment="Left" Height="68" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="395" AuthButtonClick="Auth_Click"/>
+            <ccl:Regestration_button HorizontalAlignment="Left" Height="30" VerticalAlignment="Bottom" Width="180" Margin="10,0,0,76" RegButtonClick="Reg_Click"/>
+            <ccl:CheckBox_a Name="CheckPanel" HorizontalAlignment="Left" Height="56" Margin="418,267,0,0" VerticalAlignment="Top" Width="200"/>
+        </Grid>
+
+        <!--Панель ввода логина пароля-->
+        <Grid Grid.Row="2">
+            <ccl:Login_menu x:Name="Login_menu_panel" HorizontalAlignment="Left" Height="102" Margin="0,0,0,-11" Width="700" EnterButtonClick="E_click" VerticalAlignment="Top"/>
+        </Grid>
+
+    </Grid>
+
+
+    <!--<Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        -->
+    <!--Верхушка-->
+    <!--
+        <Grid Grid.Row="0" Background="#2e4165" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Left" Width="190" Height="50" Margin="10,0,0,0">
+                <Grid.Background>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Canvas Width="345.333" Height="100" Canvas.Left="0" Canvas.Top="0">
+                                <Path Width="55.4386" Height="83.9974" Canvas.Left="103.175" Canvas.Top="9.48641" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 131.254,69.1237L 140.254,9.48641L 158.614,9.48641L 158.614,93.4838L 146.134,93.4838L 146.134,33.2464L 137.014,93.4838L 124.534,93.4838L 114.695,34.0851L 114.695,93.4838L 103.175,93.4838L 103.175,9.48641L 121.534,9.48641L 131.254,69.1237 Z "/>
+                                <Path Width="39.3573" Height="85.9173" Canvas.Left="167.134" Canvas.Top="8.52686" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 206.491,62.1641L 206.491,73.3241C 206.491,86.7642 199.772,94.4442 186.812,94.4442C 173.852,94.4442 167.134,86.7642 167.134,73.3241L 167.134,29.6455C 167.134,16.2068 173.852,8.52686 186.812,8.52686C 199.772,8.52686 206.491,16.2068 206.491,29.6455L 206.491,37.8055L 194.012,37.8055L 194.012,28.8055C 194.012,22.8055 191.372,20.5255 187.174,20.5255C 182.972,20.5255 180.332,22.8055 180.332,28.8055L 180.332,74.1641C 180.332,80.1628 182.972,82.3241 187.174,82.3241C 191.372,82.3241 194.012,80.1628 194.012,74.1641L 194.012,62.1641L 206.491,62.1641 Z "/>
+                                <Path Width="44.6387" Height="83.9973" Canvas.Left="211.412" Canvas.Top="9.48633" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 236.85,66.2436L 236.85,34.6863L 223.532,66.2436M 211.412,66.2436L 235.41,9.48633L 249.81,9.48633L 249.81,66.2436L 256.05,66.2436L 256.05,78.2436L 249.81,78.2436L 249.81,93.4836L 236.85,93.4836L 236.85,78.2436L 211.412,78.2436L 211.412,66.2436 Z "/>
+                                <Path Width="35.9987" Height="83.996" Canvas.Left="262.051" Canvas.Top="9.48682" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 275.251,44.8842L 293.37,44.8842L 293.37,56.8842L 275.251,56.8842L 275.251,81.4828L 298.05,81.4828L 298.05,93.4828L 262.051,93.4828L 262.051,9.48682L 298.05,9.48682L 298.05,21.4855L 275.251,21.4855L 275.251,44.8842 Z "/>
+                                <Path Width="39.1187" Height="83.9973" Canvas.Left="306.21" Canvas.Top="9.48576" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 319.41,21.4858L 319.41,49.9257L 325.65,49.9257C 329.85,49.9257 332.129,48.0057 332.129,42.0057L 332.129,29.4045C 332.129,23.4045 329.85,21.4858 325.65,21.4858M 345.329,30.2458L 345.329,41.1658C 345.329,54.6058 338.85,61.9244 325.65,61.9244L 319.41,61.9244L 319.41,93.4831L 306.21,93.4831L 306.21,9.48576L 325.65,9.48576C 338.85,9.48576 345.329,16.8057 345.329,30.2458 Z "/>
+                                <Path Width="58.984" Height="35.855" Canvas.Left="2.12297" Canvas.Top="4.55745" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 7.21228,27.8164C 4.85496,31.8525 3.17228,36.0924 2.12297,40.4124C 3.86963,39.2591 5.92696,38.5191 8.16429,38.3471C 10.9803,38.1337 13.651,38.8524 15.875,40.2431C 16.575,38.2657 17.4683,36.3245 18.5656,34.4471C 26.087,21.5684 40.815,15.5271 54.651,18.4244C 54.3243,13.3897 56.9736,8.83512 61.107,6.50179C 40.8496,0.460449 18.347,8.75375 7.21228,27.8164 Z "/>
+                                <Path Width="21.8534" Height="68.36" Canvas.Left="72.807" Canvas.Top="17.5151" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 80.1029,17.5151C 80.1403,22.5111 77.2629,26.9391 72.9709,29.0431C 82.4243,39.6737 84.4616,55.5711 76.899,68.5177C 75.7056,70.5604 74.3296,72.4257 72.807,74.1138C 76.583,76.0804 79.2896,79.8938 79.6376,84.4511C 79.6736,84.9311 79.6816,85.4058 79.6643,85.8751C 82.9576,82.8164 85.8669,79.2324 88.2496,75.1497C 99.443,55.9884 95.5096,32.1737 80.1029,17.5151 Z "/>
+                                <Path Width="58.8507" Height="36.8712" Canvas.Left="1.90135" Canvas.Top="61.5427" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 54.2267,86.3907C 54.18,85.792 54.18,85.2 54.216,84.6187C 46.4307,86.1453 38.084,84.9654 30.696,80.6507C 23.2734,76.3147 18.1294,69.5787 15.648,62.0054C 14.0107,62.98 12.132,63.6027 10.104,63.7587C 7.07735,63.9907 4.21869,63.1414 1.90135,61.5427C 4.61735,73.896 12.284,85.12 24.0653,92.0027C 35.6094,98.7454 48.8467,100 60.752,96.5627C 57.136,94.552 54.5653,90.8254 54.2267,86.3907 Z "/>
+                                <Path Width="17.192" Height="17.1934" Canvas.Left="58.7976" Canvas.Top="8.91818" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 75.9643,16.8608C 76.3256,21.5942 72.7816,25.7249 68.0483,26.0862C 63.3149,26.4475 59.183,22.9035 58.823,18.1688C 58.4616,13.4355 62.0056,9.30485 66.7403,8.94352C 71.4736,8.58219 75.6029,12.1275 75.9643,16.8608 Z "/>
+                                <Path Width="17.1922" Height="17.1934" Canvas.Left="0.33717" Canvas.Top="42.5261" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 17.504,50.4688C 17.8654,55.2021 14.32,59.3315 9.58669,59.6942C 4.8547,60.0555 0.722697,56.5115 0.362691,51.7768C 2.03451e-005,47.0435 3.54535,42.9128 8.27869,42.5515C 13.012,42.1901 17.1427,45.7355 17.504,50.4688 Z "/>
+                                <Path Width="17.192" Height="17.1932" Canvas.Left="58.336" Canvas.Top="76.9832" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 75.5027,84.9259C 75.864,89.6592 72.32,93.7886 67.5867,94.1512C 62.8534,94.5112 58.7214,90.9672 58.3613,86.2325C 58,81.5006 61.544,77.3686 66.2787,77.0085C 71.012,76.6472 75.1414,80.1912 75.5027,84.9259 Z "/>
+                                <Path Width="44.245" Height="44.3093" Canvas.Left="25.5762" Canvas.Top="29.3284" Stretch="Fill" Fill="#FFA3BCE2" Data="F1 M 60.2319,58.3842C 52.8812,58.9455 46.4666,53.4401 45.9066,46.0895C 45.3519,38.8455 50.6932,32.5148 57.8839,31.7961C 47.4826,26.4202 34.5786,30.0815 28.6039,40.3108C 22.4332,50.8748 25.9945,64.4401 36.5599,70.6108C 47.1226,76.7802 60.6906,73.2188 66.8599,62.6548C 68.6092,59.6588 69.5759,56.4202 69.8212,53.1788C 67.5932,56.0935 64.1799,58.0815 60.2319,58.3842 Z "/>
+                            </Canvas>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Grid.Background>
+            </Grid>
+            <ccl:Exit_button x:Name="close_b" HorizontalAlignment="Left" Margin="650,10,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+
+        -->
+    <!--Средний блок-->
+    <!--
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Grid.Background>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Canvas x:Name="Слой_1" Width="3780" Height="3780" Canvas.Left="0" Canvas.Top="0">
+                            <Viewbox x:Name="Group" Width="3779.53" Height="3779.53" Canvas.Left="0" Canvas.Top="0.466797">
+                                <Canvas Width="3779.53" Height="3779.53">
+                                    <Canvas Width="3780" Height="3780" x:Name="Clip" Clip="F1 M 0,3779.53L 3779.53,3779.53L 3779.53,0L 0,0L 0,3779.53 Z ">
+                                        <Path x:Name="Path" Width="1041.43" Height="381.332" Canvas.Left="1344.62" Canvas.Top="1674.65" Stretch="Fill" Fill="#FF6C91CB" Data="F1 M 1344.62,1674.65L 2386.05,1674.65L 2386.05,2055.98L 1943.45,2055.98L 1910.42,2000.53L 1344.62,2000.77"/>
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+                        </Canvas>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Grid.Background>
+
+
+        </Grid>
+
+        -->
+    <!--Зиг-заг-->
+    <!--
+        <Grid Grid.Row="2" Margin="0,-25,0,0">
+            <Grid.Background>
+                <VisualBrush>
+                    <VisualBrush.Visual>
+                        <Canvas Width="3780" Height="3780" Canvas.Left="0" Canvas.Top="0">
+                            <Viewbox Width="3779.53" Height="3779.53" Canvas.Left="0" Canvas.Top="0.466797">
+                                <Canvas Width="3779.53" Height="3779.53">
+                                    <Canvas Width="3780" Height="3780" Clip="F1 M 0,3779.53L 3779.53,3779.53L 3779.53,0L 0,0L 0,3779.53 Z ">
+                                        <Path Width="1041.43" Height="163.333" Canvas.Left="1369.05" Canvas.Top="1726.43" Stretch="Fill" Fill="#FF2D4165" Data="F1 M 2410.48,1781.77L 2410.48,1889.77L 1964.43,1889.77L 1902.1,1781.77L 1369.05,1781.77L 1369.05,1726.43L 1930.1,1726.43L 1962.99,1781.77L 2410.48,1781.77 Z "/>
+                                    </Canvas>
+                                </Canvas>
+                            </Viewbox>
+                        </Canvas>
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </Grid.Background>
+            <ccl:CheckBox_a HorizontalAlignment="Left" Height="48" Margin="407,39,0,0" VerticalAlignment="Top" Width="200" 
+                            RM_Checked="RM_Chk" 
+                            RM_UnChecked="RM_UnChk"
+                            Off_Checked="OFF_Chk" 
+                            Off_UnChecked="OFF_UnChk"/>
+            
+            <ccl:Auth_button HorizontalAlignment="Left" Height="64" Margin="0,42,0,-6" VerticalAlignment="Top" Width="394" AuthButtonClick="Auth_Click"/>
+            
+            <ccl:Regestration_button HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="180" Margin="10,3,0,0" RegButtonClick="Reg_Click"/>
+
+        </Grid>
+
+        -->
+    <!--Нижняя часть-->
+    <!--
+        <Grid Grid.Row="3">
+            <ccl:Login_menu HorizontalAlignment="Left" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" EnterButtonClick="E_click"/>
+        </Grid>
+    </Grid>-->
+
+</Window>

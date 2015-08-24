@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Ctrl.Filter_popup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="160">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Button Name="F_btn" HorizontalAlignment="Center" VerticalAlignment="Top" Click="F_btn_Click" Width="32" Height="32" Style="{DynamicResource F_button}"/>
+
+        <Popup Name="pFilter" StaysOpen="False" Placement="Top" HorizontalOffset="-64" VerticalOffset="0"
+               PopupAnimation="Slide"  AllowsTransparency="True">
+            <Border BorderBrush="LightBlue" VerticalAlignment="Center" HorizontalAlignment="Center" Height="80" Width="160">
+                <Grid>
+                    <Grid.Background>
+                        <VisualBrush>
+                            <VisualBrush.Visual>
+                                <Canvas Height="105.25" Width="212">
+                                    <Path Data="F1M0,0L0,94 99,94 106,105 112,94 212,94 212,0z" Fill="{StaticResource c_popup_background}" StrokeStartLineCap="Triangle" StrokeEndLineCap="Triangle" Stroke="{StaticResource c_popup_border}" StrokeThickness="1" StrokeLineJoin="Miter"  Height="109" Width="216" Stretch="Fill"/>
+                                </Canvas>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="1" Content="earthpony" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="2" Content="pegasus"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="3" Content="zebra"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="4" Content="unihorn"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="5" Content="regular"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="1" Content="helper" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource moder_chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="2" Content="coder"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource moder_chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="3" Content="admin"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource moder_chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="4" Content="moder"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource moder_chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                        <CheckBox Grid.Column="5" Content="builder"  HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource moder_chk_style}" Checked="EP_Checked" IsChecked="True"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Popup>
+
+    </Grid>
+</UserControl>

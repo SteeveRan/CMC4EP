@@ -1,0 +1,13 @@
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\bin\Release\WpfApplication1.exe.config
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\MainWindow.baml
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\MainWindow.g.cs
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\App.g.cs
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1_MarkupCompile.cache
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.g.resources
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.Properties.Resources.resources
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\bin\Release\WpfApplication1.exe
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\bin\Release\WpfApplication1.pdb
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.exe
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.pdb
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Release\WpfApplication1.csprojResolveAssemblyReference.cache

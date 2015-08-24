@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Ctrl.CheckBox_a"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="200" Height="56">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.Resources>
+        </Grid.Resources>
+
+        <CheckBox
+            VerticalContentAlignment="Center"
+            IsChecked="False"
+            FontFamily="Arial Regular" 
+            FontSize="12" 
+            Foreground="#a0bdf0"
+            Checked="Offline_Checked"
+            Unchecked="Offline_UnChecked"
+            Style="{StaticResource Chk_style}">
+            ЗАПОМНИТЬ МЕНЯ
+        </CheckBox>
+        
+        <CheckBox 
+            VerticalContentAlignment="Center"
+            IsChecked="False"
+            FontFamily="Arial Regular" 
+            FontSize="12" 
+            Foreground="#a0bdf0"
+            Margin="0,30,0,-30"
+            Checked="RememberMe_Checked"
+            Unchecked="RememberMe_UnChecked"
+            Style="{StaticResource Chk_style}">            
+            ИГРАТЬ ОФФЛАЙН
+        </CheckBox>
+    </Grid>
+
+</UserControl>

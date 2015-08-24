@@ -1,0 +1,217 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!--Самый темный-->
+        <Color x:Key="c_Dark">#2e4165</Color>
+        <!--Темный-->
+        <Color x:Key="c_Normal">#6792dd</Color>
+        <!--Светлый-->
+        <Color x:Key="c_Light">#a0bdf0</Color>
+
+        <!--Стандартная заливка иконок-->
+        <SolidColorBrush x:Key="btn_fill" Color="#FFA3BCE2"/>
+        <!--Заливка фона-->
+        <SolidColorBrush x:Key="btn_background" Color="{StaticResource c_Dark}"/>
+        <!--Заливка активных иконок-->
+        <LinearGradientBrush x:Key="btn_ligth" EndPoint="0.5,0" StartPoint="0.5,1">
+            <GradientStop Color="#FFCAABD1" Offset="0"/>
+            <GradientStop Color="#FFA3BCE1" Offset="1"/>
+        </LinearGradientBrush>
+
+
+        <!--Фон табконтрола-->
+        <SolidColorBrush x:Key="chat_Tab_backround" Color="{StaticResource c_Normal}"/>
+        <SolidColorBrush x:Key="chat_Tab_backround2" Color="{StaticResource c_Light}"/>
+
+        <!--Фон кнопки обычный-->
+        <VisualBrush x:Key="chat_btn_normal">
+            <VisualBrush.Visual>
+                <Canvas Height="25" Width="22">
+                    <Path Fill="{StaticResource btn_fill}" Data="F1M18.597,0L3.283,0C1.471,0,0,1.463,0,3.268L0,16.344C0,18.148,1.471,19.611,3.283,19.611L3.316,19.611 1.905,25.107 8.68,19.611 9.55,19.611 18.597,19.611C20.951,19.65,21.895,18.91,21.878,16.344L21.878,3.268C21.878,1.463,20.409,0,18.597,0" Height="25" Canvas.Left="11" Canvas.Top="5" Width="22"/>
+                </Canvas>
+            </VisualBrush.Visual>
+        </VisualBrush>
+
+        <!--Фон нажатой кнопки-->
+        <VisualBrush x:Key="chat_btn_hover">
+            <VisualBrush.Visual>
+                <Canvas Height="25" Width="22">
+                    <Path Fill="{StaticResource btn_ligth}" Data="F1M18.597,0L3.283,0C1.471,0,0,1.463,0,3.268L0,16.344C0,18.148,1.471,19.611,3.283,19.611L3.316,19.611 1.905,25.107 8.68,19.611 9.55,19.611 18.597,19.611C20.951,19.65,21.895,18.91,21.878,16.344L21.878,3.268C21.878,1.463,20.409,0,18.597,0" Height="25" Canvas.Left="11" Canvas.Top="5" Width="22"/>
+                </Canvas>
+            </VisualBrush.Visual>
+        </VisualBrush>
+
+        <Style x:Key="chat_btn" TargetType="Button">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <!--<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                                      x:Name="Border"  
+                                      Background="{StaticResource chat_btn_normal}">
+                            <ContentPresenter 
+                                                        Margin="2"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_btn_hover}" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_btn_hover}" />
+                                <Setter TargetName="Border" Property="Margin" Value="1"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <Style x:Key="Chat_tab" TargetType="TabControl">
+                <Setter Property = "TabStripPlacement" Value = "Top"/>
+                <Setter Property = "Foreground" Value= "Blue"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabControl">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="5"/>
+                                    <RowDefinition Height="32"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <TabPanel 
+                                    Grid.Row="1"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Left"
+                                    Name="HeaderPanel"
+                                    Panel.ZIndex="1" 
+                                    IsItemsHost="True"
+                                    KeyboardNavigation.TabIndex="1"
+                                    />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Border x:Name="Border"
+                                      KeyboardNavigation.TabNavigation="Local"
+                                      KeyboardNavigation.DirectionalNavigation="Contained"
+                                      KeyboardNavigation.TabIndex="2"
+                                    Background="{StaticResource chat_Tab_backround}">
+                                        <ContentPresenter 
+                                    x:Name="PART_SelectedContentHost"
+                                    Margin="4"
+                                    ContentSource="SelectedContent"/>
+                                    </Border>
+                                </Grid>
+                                <Grid Grid.Row="3">
+                                    <Border>
+                                        <Grid Background="{DynamicResource chat_Tab_backround2}" Height="32" MinWidth="{DynamicResource i_search_min_width}">
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="40"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0">
+                                                <TextBox HorizontalAlignment="Stretch"                      
+                                                 VerticalAlignment="Center"
+                                                 Height="32" 
+                                                 TextWrapping="Wrap" 
+                                                 Text="Поиск"  
+                                                 Background="{DynamicResource chat_Tab_backround2}"
+                                                 VerticalContentAlignment="Center"
+                                                 HorizontalContentAlignment="Left" 
+                                                 FontSize="14" 
+                                                 FontFamily="{DynamicResource Default}"
+                                                 BorderThickness="0"/>
+                                            </Grid>
+                                            <Grid Grid.Column="1">
+                                                <Grid.Background>
+                                                    <VisualBrush>
+                                                        <VisualBrush.Visual>
+                                                            <Path Fill="{StaticResource btn_background}" Data="F1M6.925,32.087L0,16.044 6.925,0 39.012,0 39.012,32.087z" Height="32.087" Canvas.Left="0" Canvas.Top="0" Width="39.012"/>
+                                                        </VisualBrush.Visual>
+                                                    </VisualBrush>
+                                                </Grid.Background>
+                                                <Button x:Name="Chat_button" Click="Chat_button_Click"  Style="{StaticResource chat_btn}" Height="19" Width="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,1,-4,0"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="GlobalChat" TargetType="TabItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border Background="{StaticResource chat_Tab_backround}">
+                                <Border Width="52" Height="27"  Name="Border" BorderBrush="{StaticResource chat_Tab_backround}" BorderThickness="2">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"/>
+                                </Border>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_Tab_backround2}" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_Tab_backround}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="PlayerChat" TargetType="TabItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border Background="{StaticResource chat_Tab_backround}">
+                                <Border Width="52" Height="27"  Name="Border" BorderBrush="{StaticResource chat_Tab_backround}" BorderThickness="2">
+                                    <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"/>
+                                </Border>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_Tab_backround2}" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource chat_Tab_backround}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <TabControl Margin="46,42,81,52" Style="{StaticResource Chat_tab}">
+            <TabItem Header="Global" Style="{StaticResource GlobalChat}">
+                <Grid Background="{StaticResource chat_Tab_backround2}"/>
+            </TabItem>
+            <TabItem Header="Player 1" Style="{StaticResource PlayerChat}">
+                <Grid Background="{StaticResource chat_Tab_backround2}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="Ctrl.Search_box"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="32">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border BorderBrush="{DynamicResource c_search_border}" BorderThickness="1">
+
+        <Grid Background="{DynamicResource c_search_background}" Height="32" MinWidth="{DynamicResource i_search_min_width}">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <TextBox HorizontalAlignment="Left"                      
+                     VerticalAlignment="Center"
+                     Height="32" 
+                     TextWrapping="Wrap" 
+                     Text="Поиск"  
+                     Width="226" 
+                     Background="{DynamicResource c_search_background}"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Left" 
+                     FontSize="14" 
+                     FontFamily="{DynamicResource Default}"                     
+                     />
+        </Grid>
+        <Grid Grid.Column="1">            
+            <Button x:Name="Search_List_button" Click="Search_List_button_Click" Style="{StaticResource search_list_button}" Height="32" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+
+    </Grid>
+    </Border>
+</UserControl>

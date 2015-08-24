@@ -1,0 +1,13 @@
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\bin\Release\Ctrl_lib.dll
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\bin\Release\Ctrl_lib.pdb
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.csprojResolveAssemblyReference.cache
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Auth_button.baml
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Exit_button.baml
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Auth_button.g.cs
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Exit_button.g.cs
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib_MarkupCompile.cache
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.g.resources
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.Properties.Resources.resources
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.csproj.GenerateResource.Cache
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.dll
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Release\Ctrl_lib.pdb

@@ -1,0 +1,83 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Ctrl="clr-namespace:Ctrl;assembly=Ctrl" 
+        x:Class="CMC4EP.MainWindow"
+        Title=""  
+        MinHeight="480" 
+        MinWidth="700" 
+        Height="480"
+        Width="1000"
+        WindowStyle="None"  BorderThickness="0" AllowsTransparency="True" Background="Transparent"
+        MouseLeftButtonDown ="Window_MouseLeftButtonDown" ResizeMode="CanResizeWithGrip" WindowStartupLocation ="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MainDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl Margin="0,0,0,0" Style="{StaticResource Tab_style}">
+            <!--ВКЛАДКА ЧАТА-->
+            <TabItem Style="{DynamicResource Chat_TabItem_style}">
+                <Grid Background="{StaticResource c_Tab_backround}">
+                    <TabControl Margin="10,32,10,10" Style="{StaticResource Chat_tab}">
+                        <TabItem Header="Global" Style="{StaticResource GlobalChat}">
+                            <Grid Background="{StaticResource chat_Tab_backround2}"/>
+                        </TabItem>
+                        <TabItem Header="Player 1" Style="{StaticResource PlayerChat}">
+                            <Grid Background="{StaticResource chat_Tab_backround2}"/>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <!--ВКЛАДКА ДРУЗЬЯШЕК-->
+            <TabItem Style="{DynamicResource Friends_TabItem_style}">
+                <Grid Background="{StaticResource c_Tab_backround}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ctrl:FriendsList Name="FriendList"  Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" Width="300"/>
+                </Grid>
+            </TabItem>
+            <!--ВКЛАДКА ПОИСКА ПОНЯШ-->
+            <TabItem Style="{DynamicResource Search_TabItem_style}">
+                <Grid Background="{StaticResource c_Tab_backround}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="295"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Ctrl:Search_list Name="P_list" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="10,10,0,10" Width="245" Loaded="Search_list_Loaded" ItemSelected="P_list_ItemSelected" />
+                        <Grid Grid.Column="1">
+
+                        </Grid>
+                        <Ctrl:UserInform Name="UInform" Grid.Column="1" Margin="10,10,0,0"/>
+                    </Grid>
+
+                    <Ctrl:Search_box Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Height="32" Margin="10,8,0,0" VerticalAlignment="Top" Width="266"/>
+                    <Ctrl:Filter_popup HorizontalAlignment="Left" Margin="285,8,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <!--ВКЛАДКА КАРТЫ-->
+            <TabItem Style="{StaticResource Map_TabItem_style}">
+                
+            </TabItem>
+            <!--ВКЛАДКА ОПЦИЙ-->
+            <TabItem Style="{DynamicResource Options_TabItem_style}">
+                <Grid Background="{StaticResource c_Tab_backround}"/>
+            </TabItem>
+        </TabControl>
+        <Ctrl:Exit_button Grid.Row="0" Margin="0,5,5,0" VerticalAlignment="Top" HorizontalAlignment="Right" />
+
+    </Grid>
+</Window>
+    

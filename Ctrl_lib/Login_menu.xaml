@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Ctrl.Login_menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="700" Height="100">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="395"/>
+            <ColumnDefinition Width="305"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#2e4165">
+            <TextBox x:Name="Login_box" HorizontalAlignment="Left"
+                 VerticalAlignment="Center" 
+                 Margin="10,10,0,55" 
+                 TextWrapping="Wrap" 
+                 Height="35" 
+                 Width="375" 
+                 Background="#FFA0BDF0" 
+                 HorizontalContentAlignment="Left"
+                 VerticalContentAlignment="Center" 
+                 FontFamily="Arial Regular" 
+                 FontSize="26" 
+                 Foreground="#FF2E4165" 
+                     >
+                Zelourt
+            </TextBox>
+            <PasswordBox 
+                x:Name="Password_box"
+                HorizontalAlignment="Left"
+                     Height="35"                      
+                     Width="375" 
+                     Margin="10,55,0,10" 
+                     Background="#FFA0BDF0" 
+                     MaxLength="10" 
+                     HorizontalContentAlignment="Left"
+                     VerticalContentAlignment="Center"  
+                     FontSize="20" 
+                     VerticalAlignment="Center" 
+                     Foreground="#FF2E4165" 
+                     Password="12345"/>
+        </Grid>
+        
+        <Grid Grid.Column="1">
+            <Button x:Name="Button" Click="Button_Click" Margin="5,5,157,50" Style="{StaticResource Enter_btn_style}"/>
+        </Grid>
+    </Grid>
+</UserControl>

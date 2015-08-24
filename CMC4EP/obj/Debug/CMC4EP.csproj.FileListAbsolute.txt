@@ -1,0 +1,57 @@
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe.config
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\bin\Debug\CMC4EP.pdb
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csprojResolveAssemblyReference.cache
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\AutoRise.baml
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\MainWindow.baml
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\AutoRise.g.cs
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\MainWindow.g.cs
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\App.g.cs
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP_MarkupCompile.cache
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.g.resources
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Properties.Resources.resources
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csproj.GenerateResource.Cache
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.exe
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.pdb
+c:\users\zelou\onedrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\App.baml
+C:\Users\Zelou\OneDrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\GreetingBox.baml
+C:\Users\Zelou\OneDrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\GreetingBox.g.cs
+C:\Users\Zelou\OneDrive\документы\visual studio 2013\Projects\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Resource.resources
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe.config
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.exe
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.pdb
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.pdb
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csprojResolveAssemblyReference.cache
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\AutoRise.baml
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\MainWindow.baml
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\App.baml
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\AutoRise.g.cs
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\MainWindow.g.cs
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\App.g.cs
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP_MarkupCompile.cache
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.g.resources
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Properties.Resources.resources
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Resource.resources
+C:\Users\Zelou\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csproj.GenerateResource.Cache
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe.config
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.exe
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.pdb
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.exe
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\bin\Debug\CMC4EP.pdb
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csprojResolveAssemblyReference.cache
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\AutoRise.baml
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\MainWindow.baml
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\App.baml
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\AutoRise.g.cs
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\MainWindow.g.cs
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\App.g.cs
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP_MarkupCompile.cache
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.g.resources
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Properties.Resources.resources
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.Resource.resources
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\CMC4EP.csproj.GenerateResource.Cache
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\MainDictionary.baml
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\obj\Debug\MainDictionary.g.cs
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\bin\Debug\Ctrl.dll
+C:\Users\Носов\Desktop\CMC4EP\CMC4EP\bin\Debug\Ctrl.pdb
