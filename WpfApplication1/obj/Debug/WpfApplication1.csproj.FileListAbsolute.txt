@@ -10,3 +10,4 @@ C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Debug\WpfApplication1.Pro
 C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Debug\WpfApplication1.csproj.GenerateResource.Cache
 C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Debug\WpfApplication1.exe
 C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Debug\WpfApplication1.pdb
+C:\Users\Носов\Desktop\CMC4EP\WpfApplication1\obj\Debug\WpfApplication1.csprojResolveAssemblyReference.cache

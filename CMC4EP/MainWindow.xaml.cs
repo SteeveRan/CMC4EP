@@ -55,6 +55,16 @@ namespace CMC4EP
                 _l.Add(new Brony(_p.Name, _p.pType, _p.isActive));
             }
             if (P_list != null) P_list.changePoniesList(_l);
+
+            // Выдираем из словаря список пони и грузим его в friend_list
+            MyFriends _fl = new MyFriends();
+            ICollection<MyFriend> _fvalue = Default_friend_list.Values;
+            foreach (MyFriend _f in _fvalue)
+            {
+                _fl.Add(_f);
+            }
+            if (FriendList != null) FriendList.ChangeFriendsList(_fl);
+
         }
         // Затычка для листа поиска
 
@@ -68,6 +78,13 @@ namespace CMC4EP
             {"Rarity", new Brony("Rarity","Pegasi are BRUTES!!",pony_type.unihorn,user_type.player,true,new BitmapImage(new Uri("/CMC4EP;component/Media/rarity.png", UriKind.RelativeOrAbsolute)))},
             {"Spike", new Brony("Spike","",pony_type.special,user_type.coder,false,new BitmapImage(new Uri("/CMC4EP;component/Media/spike.jpg", UriKind.RelativeOrAbsolute)))},
             {"Derpy", new Brony("Derpy","Derp!!!",pony_type.pegasus,user_type.coder,true,new BitmapImage(new Uri("/CMC4EP;component/Media/derp.jpg", UriKind.RelativeOrAbsolute)))}
+        };
+
+        Dictionary<string, MyFriend> Default_friend_list = new Dictionary<string, MyFriend>
+        {
+            {"Applejack", new MyFriend("Applejack","Soup's on, everypony!",pony_type.earthpony,user_type.player,true,new BitmapImage(new Uri("/CMC4EP;component/Media/applejack.png", UriKind.RelativeOrAbsolute)))},
+            {"Spike", new MyFriend("Spike","",pony_type.special,user_type.coder,false,new BitmapImage(new Uri("/CMC4EP;component/Media/spike.jpg", UriKind.RelativeOrAbsolute)))},
+            {"Derpy", new MyFriend("Derpy","Derp!!!",pony_type.pegasus,user_type.coder,true,new BitmapImage(new Uri("/CMC4EP;component/Media/derp.jpg", UriKind.RelativeOrAbsolute)))}
         };
 
         private void P_list_ItemSelected(object sender, RoutedEventArgs e)

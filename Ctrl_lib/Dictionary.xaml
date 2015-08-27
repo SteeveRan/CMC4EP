@@ -116,6 +116,9 @@
         <GradientStop Color="#FFA3BCE1" Offset="1"/>
     </LinearGradientBrush>
 
+    <SolidColorBrush x:Key="btn_border" Color="{StaticResource c_Light}"/>
+
+
 
     <!--////////////////////////////////////////       ЦВЕТА (конец)          //////////////////////////////////////////////////-->
 
@@ -1276,16 +1279,22 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border x:Name="Border">
-                        <Border.Background>
-                            <VisualBrush>
-                                <VisualBrush.Visual>
-                                    <Canvas Height="32" Width="20">
-                                        <Path x:Name="OnMap_btn_fill"  Fill="{StaticResource btn_fill}" Data="F1M181.955,303.257C114.966,303.257 60.653,248.946 60.653,181.955 60.653,114.966 114.966,60.651 181.955,60.651 248.946,60.651 303.257,114.966 303.257,181.955 303.257,248.947 248.947,303.257 181.955,303.257 M181.955,0C81.473,0 0,81.473 0,181.955 0,222.883 13.504,260.614 36.31,291.03L181.956,485.213 327.601,291.03C350.409,260.614 363.911,222.884 363.911,181.955 363.911,81.473 282.438,0 181.955,0" Height="485.213" Canvas.Left="0" Canvas.Top="0" Width="363.911"/>
-                                    </Canvas>
-                                </VisualBrush.Visual>
-                            </VisualBrush>
-                        </Border.Background>
+                    <Border x:Name="OnMap_Border" 
+                        Background="{StaticResource btn_background}"
+                        CornerRadius="1"
+                        BorderBrush="White"
+                        BorderThickness="1">
+                        <Border x:Name="OnMap_Border2" Width="15" Height="20">
+                            <Border.Background>
+                                <VisualBrush>
+                                    <VisualBrush.Visual>
+                                        <Canvas>
+                                            <Path x:Name="OnMap_btn_fill"  Fill="{StaticResource btn_fill}" Data="F1M181.955,303.257C114.966,303.257 60.653,248.946 60.653,181.955 60.653,114.966 114.966,60.651 181.955,60.651 248.946,60.651 303.257,114.966 303.257,181.955 303.257,248.947 248.947,303.257 181.955,303.257 M181.955,0C81.473,0 0,81.473 0,181.955 0,222.883 13.504,260.614 36.31,291.03L181.956,485.213 327.601,291.03C350.409,260.614 363.911,222.884 363.911,181.955 363.911,81.473 282.438,0 181.955,0" Height="485.213" Canvas.Left="0" Canvas.Top="0" Width="363.911"/>
+                                        </Canvas>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Border.Background>
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -1293,7 +1302,79 @@
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter TargetName="OnMap_btn_fill" Property="Fill" Value="{StaticResource btn_ligth}" />
-                            <Setter TargetName="Border" Property="Margin" Value="1"/>
+                            <Setter TargetName="OnMap_Border" Property="Margin" Value="1"/>
+                            <Setter TargetName="OnMap_Border2" Property="Width" Value="13"/>
+                            <Setter TargetName="OnMap_Border2" Property="Height" Value="18"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Стиль кнопки удалить из друзей -->
+    <Style x:Key="DelFriend_btn" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="DelBorder" 
+                        Background="{StaticResource btn_background}"
+                        CornerRadius="1"
+                        BorderBrush="White"
+                        BorderThickness="1">
+                        <Border>
+                            <Rectangle x:Name="Del_btn_fill" Fill="{StaticResource btn_fill}"  Height="5" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Del_btn_fill" Property="Fill" Value="{StaticResource btn_ligth}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Del_btn_fill" Property="Fill" Value="{StaticResource btn_ligth}" />
+                            <Setter TargetName="DelBorder" Property="Margin" Value="1"/>
+                            <Setter TargetName="Del_btn_fill" Property="Width" Value="18"/>
+                            <Setter TargetName="Del_btn_fill" Property="Height" Value="4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- Стиль кнопки удалить из друзей -->
+    <Style x:Key="ChatFriend_btn" TargetType="Button">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="ChatBorder" 
+                        Background="{StaticResource btn_background}"
+                        CornerRadius="1"
+                        BorderBrush="White"
+                        BorderThickness="1">
+                        <Border x:Name="ChatBorder2" Width="20" Height="20">
+                            <Border.Background>
+                                <VisualBrush>
+                                    <VisualBrush.Visual>
+                                        <Canvas>
+                                            <Path x:Name="cht_btn_fill"  Fill="{StaticResource btn_fill}" Data="F1M18.597,0L3.283,0C1.471,0,0,1.463,0,3.268L0,16.344C0,18.148,1.471,19.611,3.283,19.611L3.316,19.611 1.905,25.107 8.68,19.611 9.55,19.611 18.597,19.611C20.951,19.65,21.895,18.91,21.878,16.344L21.878,3.268C21.878,1.463,20.409,0,18.597,0" Height="25" Canvas.Left="11" Canvas.Top="5" Width="22"/>
+                                        </Canvas>
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Border.Background>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="cht_btn_fill" Property="Fill" Value="{StaticResource btn_ligth}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="cht_btn_fill" Property="Fill" Value="{StaticResource btn_ligth}" />
+                            <Setter TargetName="ChatBorder" Property="Margin" Value="1"/>
+                            <Setter TargetName="ChatBorder2" Property="Width" Value="18"/>
+                            <Setter TargetName="ChatBorder2" Property="Height" Value="18"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1313,15 +1394,25 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                    <Border BorderBrush="White" BorderThickness="1" Width="auto" Height="96" Background="{StaticResource friend_item_background}" CornerRadius="5">
+                    <Border BorderBrush="{StaticResource c_ListBox_background}" BorderThickness="1" Width="auto" Height="100" Background="{StaticResource friend_item_background}" CornerRadius="5" Margin="2">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="112"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <Image x:Name="image" HorizontalAlignment="Left" Width="100" Source="{Binding Avatar}"/>
+                                <Border BorderThickness="1" BorderBrush="{StaticResource friend_item_background}" CornerRadius="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="1">
+                                    <Grid>
+                                        <Border Name="mask" Background="White" CornerRadius="5"/>
+                                        <StackPanel>
+                                            <StackPanel.OpacityMask>
+                                                <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                            </StackPanel.OpacityMask>
+                                            <Image x:Name="image" Source="{Binding Avatar}"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
                             </Grid>
                             <Grid Grid.Column="1">
                                 <StackPanel Orientation="Vertical">
@@ -1340,10 +1431,10 @@
                                 </StackPanel>
                             </Grid>
                             <Grid Grid.Column="2">
-                                <StackPanel Orientation="Vertical">
-                                    <Button x:Name="button" Content="Del" Width="25" Height="32" VerticalAlignment="Top" />
-                                    <Button x:Name="button_Copy" Content="Chat"/>
-                                    <Button x:Name="button_Copy1" Content="Show on Map" VerticalAlignment="Bottom" Style="{StaticResource OnMap_btn}" Width="32"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="Del_btn" Width="32" Height="32" VerticalAlignment="Top" Style="{StaticResource DelFriend_btn}" Margin="2,4,2,2"/>
+                                    <Button x:Name="Chat_btn" Width="32" Height="32" VerticalAlignment="Top" Style="{StaticResource ChatFriend_btn}" Margin="2,4,2,2"/>
+                                    <Button x:Name="OnTheMap_btn" Width="32" Height="32" VerticalAlignment="Top" Style="{StaticResource OnMap_btn}" Margin="2,4,2,2"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>

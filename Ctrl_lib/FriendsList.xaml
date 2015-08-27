@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Ctrl"
-             mc:Ignorable="d" Width="300">
+             mc:Ignorable="d">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,10 +13,18 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
-        <Border Margin="0,0,0,0">
+    <Grid Width="auto">
+        <Grid.Resources>
+            <local:MyFriends x:Key="li"/>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="39*"/>
+        </Grid.RowDefinitions>
+        <Border Margin="0,0,0,0" Grid.RowSpan="2">
             <ScrollViewer Style="{StaticResource Pony_scroll}" Width="auto" Margin="0,0,0,0">
                 <ListBox x:Name="friendsList" Style="{StaticResource FriendsList}" ItemsSource="{Binding list, Mode=OneWay}" SelectionChanged="FriendsList_SelectionChanged"/>
+                <!--<ListBox x:Name="friendsList" Style="{StaticResource FriendsList}" ItemsSource="{StaticResource li}" SelectionChanged="FriendsList_SelectionChanged"/>-->
             </ScrollViewer>
         </Border>
     </Grid>

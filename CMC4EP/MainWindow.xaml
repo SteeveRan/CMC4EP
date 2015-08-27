@@ -40,7 +40,7 @@
                         <RowDefinition Height="40"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Ctrl:FriendsList Name="FriendList"  Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" Width="300"/>
+                    <Ctrl:FriendsList Name="FriendList"  Grid.Row="1" Margin="10,10,10,10" />
                 </Grid>
             </TabItem>
             <!--ВКЛАДКА ПОИСКА ПОНЯШ-->
@@ -69,7 +69,7 @@
             </TabItem>
             <!--ВКЛАДКА КАРТЫ-->
             <TabItem Style="{StaticResource Map_TabItem_style}">
-                
+
             </TabItem>
             <!--ВКЛАДКА ОПЦИЙ-->
             <TabItem Style="{DynamicResource Options_TabItem_style}">

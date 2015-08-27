@@ -16,9 +16,28 @@ namespace Ctrl
 
     public class MyFriend : Brony
     {
-        MyFriend()
+        public MyFriend()
         {
+            this.Name = "Derpy";
+            this.AboutBrony = "Derp!!!";
+            this.pType = pony_type.pegasus;
+            this.uType = user_type.player;
+            this.status = "Muffins!";
+            this.isActive = false;
+            this.statusColor = define_color(this.pType, this.isActive);
+            this.Avatar = new BitmapImage(new Uri("/CMC4EP;component/Media/derp.jpg", UriKind.Relative));
+        }
 
+        public MyFriend(string _name, string _about, pony_type _ptype, user_type _utype, bool _isActive, BitmapImage _avatar)
+        {
+            this.Name = _name;
+            this.AboutBrony = _about;
+            this.pType = _ptype;
+            this.uType = _utype;
+            this.status = "";
+            this.isActive = _isActive;
+            this.statusColor = define_color(this.pType, this.isActive);
+            this.Avatar = _avatar;
         }
     }
 
@@ -26,6 +45,7 @@ namespace Ctrl
     {
         public MyFriends()
         {
+            Add( new MyFriend());
         }
     }
 
@@ -70,7 +90,7 @@ namespace Ctrl
             this.status = "Muffins!";
             this.isActive = false;
             this.statusColor = define_color(this.pType, this.isActive);
-            this.Avatar = new BitmapImage(new Uri("/Ctrl_lib;component/Media/derp.jpg", UriKind.Relative));
+            this.Avatar = new BitmapImage(new Uri("/CMC4EP;component/Media/derp.jpg", UriKind.Relative));
         }
 
         public Brony(string _name, string _about, pony_type _ptype, user_type _utype, string _status, bool _isActive, BitmapImage _avatar)
@@ -130,7 +150,7 @@ namespace Ctrl
             this.status = "";
             this.isActive = _isActive;
             this.statusColor = define_color(this.pType, this.isActive);
-            this.Avatar = new BitmapImage(new Uri("/Ctrl_lib;component/Media/derp.jpg", UriKind.Relative));
+            this.Avatar = new BitmapImage(new Uri("/CMC4EP;component/Media/derp.jpg", UriKind.Relative));
         }
 
         protected string define_color(pony_type _t, bool isA)

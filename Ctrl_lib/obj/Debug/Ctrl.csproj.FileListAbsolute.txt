@@ -33,3 +33,4 @@ C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Debug\ChatButton.baml
 C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Debug\Themes\Generic.baml
 C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Debug\FriendsList.g.cs
 C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Debug\FriendsList.baml
+C:\Users\Носов\Desktop\CMC4EP\Ctrl_lib\obj\Debug\Ctrl.csprojResolveAssemblyReference.cache
